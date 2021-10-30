@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:reverseproxy
+  name: reverseproxy
 spec:
   replica: 1
   selector:
     matchLabels:
-      app:reverseproxy
+      app: reverseproxy
   template:
     metadata:
       labels:
-        app:reverseproxy
+        app: reverseproxy
     spec:
       containers:
-      - name:reverseproxy
+      - name: reverseproxy
         image: bvgo/reverseproxy
         resources:
           limits:
