@@ -15,10 +15,14 @@ spec:
       containers:
       - name: reverseproxy
         image: bvgo/reverseproxy
+        imagePullPolicy: Always
         resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250Mi"
           limits:
             memory: "1024Mi"
             cpu: "500m"
         ports:
         - containerPort: 8080
-
+      restartPolicy: Always
