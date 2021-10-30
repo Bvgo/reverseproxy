@@ -1,25 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reverseproxy
+  name:reverseproxy
 spec:
-  replicas: 1
+  replica: 1
   selector:
     matchLabels:
-      app: reverseproxy
+      app:reverseproxy
   template:
     metadata:
       labels:
-        app: reverseproxy
+        app:reverseproxy
     spec:
       containers:
-        - name: reverseproxy
-          image: bvgo/reverseproxy
-          resources:
-            limits:
-              memory: '1024Mi'
-              cpu: '500m'
-          ports:
-            - containerPort: 8080
-
+      - name:reverseproxy
+        image: bvgo/reverseproxy
+        resources:
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
 
